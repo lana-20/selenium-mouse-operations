@@ -15,12 +15,34 @@ Apart from this, there are different types of scenarios where I can use a mouse 
 I encounter mouse hover actions in some apps. As soon as I place my mouse cursor on a particular element, some other menu options are diplayed. 
 
 Login to the www.amazon.com account. As soon as I hover over the Accounts & Lists tab, some other menus pop up to choose options for shopping. I can click on previously purchased items or manage those items, click on one of my lists or create a list (Wishlist, Alexa shopping list, registry, etc.), or select any of the account options.
+
 <img src="https://user-images.githubusercontent.com/70295997/209458367-19d7d2f7-3c72-4108-8499-60096052e3c3.png" width=800>
 
-    driver.get("https://www.amazon.com/")
-    driver.find_element(By.XPATH, "//span[@class='nav-line-2 ']")	# Account & List tab
+Another e-commerce app example is Carbon38, a performance fashion store. Go to https://carbon38.com/collections/sale and hover over the 1st sale items in the inventory list.
 
-...
+    driver.get("https://carbon38.com/collections/sale")
+    sale_item = driver.find_element(By.XPATH, "(//li[@class='isp_grid_product inventory'])[1]")
+
+<img src="https://user-images.githubusercontent.com/70295997/209482028-1261765d-d5b2-4042-ba8e-bf632b03746a.png" width=800>
+
+Click the Quickshop button. (INSERT action chains class code)
+
+    quickshop_btn -> (//a[@class='isp_product_quick_view_button'])[1]
+
+<img src="https://user-images.githubusercontent.com/70295997/209482035-e9e1302f-4118-492e-bcd4-46964afe5ac8.png" width=800>
+
+Capture the Quickview element:
+
+    //div[@id='isp_product_quick_view_model']
+
+<img src="https://user-images.githubusercontent.com/70295997/209482044-a6dc2b8e-f51e-4be8-830d-c83dc46fec24.png" width=800>
+
+Verify Add to Bag button is displayed.
+
+    //button[@class='isp_quick_view_add_to_cart_btn_quick_view']
+
+<img src="https://user-images.githubusercontent.com/70295997/209482051-8935aee7-a2f5-4966-83df-590b37d6c017.png" width=800>
+
 
 
 
