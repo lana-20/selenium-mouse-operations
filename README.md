@@ -18,7 +18,11 @@ Login to the www.amazon.com account. As soon as I hover over the Accounts & List
 
 <img src="https://user-images.githubusercontent.com/70295997/209458367-19d7d2f7-3c72-4108-8499-60096052e3c3.png" width=800>
 
-Another e-commerce app example is Carbon38, a performance fashion store. Go to https://carbon38.com/collections/sale and hover over the 1st sale items in the inventory list.
+Mouse over action is placing the mouse cursor on a particular element. Then the sub-options get displyed, I am able to see and interact with the rest of elements.
+
+Another e-commerce app example is Carbon38, a performance fashion store. Here my operation is to go to a sale item, then the Quick Shop view, and verify the Add to Bag button is loaded in the DOM. So, I move my cursor over the 1st inventory item, then click on the Quick Shop button to display the quick view element. Then I use the WebDriverWait and [Expected Conditions](https://www.selenium.dev/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html) to verify the Add to Cart button is clickable (visible and enabled such that I can click it). Additional validations are possible, but I focus on the mouse actions.
+
+Go to https://carbon38.com/collections/sale and hover over the 1st sale items in the inventory list.
 
     driver.get("https://carbon38.com/collections/sale")
     sale_item = driver.find_element(By.XPATH, "(//li[@class='isp_grid_product inventory'])[1]")
