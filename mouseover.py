@@ -13,8 +13,7 @@ add_to_cart = driver.find_element(By.XPATH, "//button[@class='isp_quick_view_add
 
 act = ActionChains()
 act.move_to_element(sale_item).move_to(quickshop_btn).click().perform()
-
-assertEqual(add_to_cart.text, "ADD TO BAG")
+assertEqual("ADD TO BAG", add_to_cart.text)
 
 ...
 
