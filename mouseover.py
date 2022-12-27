@@ -15,6 +15,4 @@ act = ActionChains(driver)
 act.move_to_element(sale_item).move_to(quickshop_btn).click().perform()
 assertEqual("ADD TO BAG", add_to_cart.text)
 
-...
-
 driver.close()
