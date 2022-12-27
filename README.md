@@ -52,7 +52,9 @@ Verify Add to Bag button is displayed.
 
 <img src="https://user-images.githubusercontent.com/70295997/209482051-8935aee7-a2f5-4966-83df-590b37d6c017.png" width=800>
 
-To perfrom the mouse hover action I need to create an ActionChains() class object, because I can't directly access methods from the this class. It's a built-in class available in Selenium WebDriver. Through the object of the class I am able to access all the methods which perform the mouse operations. To mouse over, I use the _move_to_element()_ method and pass into it the element I want to move to.
+To perfrom the mouse hover action I need to create an ActionChains() class object, because I can't directly access methods from the this class. It's a built-in class available in Selenium WebDriver. Through the object of the class I am able to access all the methods which perform the mouse operations. Pass the driver into the object. To mouse over, I use the _move_to_element()_ method and pass into it the element I want to move to.
+
+I create chained actions to be performed. To actually perform these actions, I add the _perform()_ method. No actions get perfomred without this method. To mouse over one element, one _move_to_element()_ statement suffices.
 
         from selenium.webdriver.import ActionChains
 
@@ -61,7 +63,7 @@ To perfrom the mouse hover action I need to create an ActionChains() class objec
         quickshop_btn = driver.find_element(By.XPATH, "(//a[@class='isp_product_quick_view_button'])[1]")
         add_to_cart = driver.find_element(By.XPATH, "//button[@class='isp_quick_view_add_to_cart_btn_quick_view']")
 
-        act = ActionChains()
+        act = ActionChains(driver)
         act.move_to_element(sale_item).move_to(quickshop_btn).click().perform()
 
         assertEqual("ADD TO BAG", add_to_cart.text)
