@@ -5,7 +5,7 @@ Sometimes, as an SDET, I work with various mouse operations in an app. Operation
 To handle mouse operations in Selenium, I use a WebDriver class called [ActionChains()](https://www.selenium.dev/selenium/docs/api/py/webdriver/selenium.webdriver.common.action_chains.html). This class avails a number if methods to perform double click, right click, or drag and drop.
 
 Different types of mouse related operations:
-1) Mouse hover
+1) Mouse hover - _move_to_element()_
 2) Right click
 3) Double click
 4) Drag and drop
@@ -67,4 +67,7 @@ I create chained actions to be performed. To actually perform these actions, I a
         act.move_to_element(sale_item).move_to(quickshop_btn).click().perform()
 
         assertEqual("ADD TO BAG", add_to_cart.text)
+
+Sometimes apps do not allow to perform a click action on the tabs. In those case, I use the mouse over option.
+
 
