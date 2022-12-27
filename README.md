@@ -34,7 +34,7 @@ Go to https://carbon38.com/collections/sale and hover over the 1st sale items in
 
 <img src="https://user-images.githubusercontent.com/70295997/209482028-1261765d-d5b2-4042-ba8e-bf632b03746a.png" width=800>
 
-Mouse over and click the Quickshop button.
+Click the Quickshop button.
 
     (//a[@class='isp_product_quick_view_button'])[1]
 
@@ -64,7 +64,7 @@ I create chained actions to be performed. To actually perform these actions, I a
         add_to_cart = driver.find_element(By.XPATH, "//button[@class='isp_quick_view_add_to_cart_btn_quick_view']")
 
         act = ActionChains(driver)
-        act.move_to_element(sale_item).move_to(quickshop_btn).click().perform()
+        act.move_to_element(sale_item).click(quickshop_btn).perform()
 
         assertEqual("ADD TO BAG", add_to_cart.text)
 
