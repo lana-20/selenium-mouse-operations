@@ -11,7 +11,7 @@ sale_item = driver.find_element(By.XPATH, "(//li[@class='isp_grid_product invent
 quickshop_btn = driver.find_element(By.XPATH, "(//a[@class='isp_product_quick_view_button'])[1]")
 add_to_cart = driver.find_element(By.XPATH, "//button[@class='isp_quick_view_add_to_cart_btn_quick_view']")
 
-act = ActionChains()
+act = ActionChains(driver)
 act.move_to_element(sale_item).move_to(quickshop_btn).click().perform()
 assertEqual("ADD TO BAG", add_to_cart.text)
 
