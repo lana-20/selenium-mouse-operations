@@ -52,7 +52,7 @@ Verify Add to Bag button is displayed.
 
 <img src="https://user-images.githubusercontent.com/70295997/209482051-8935aee7-a2f5-4966-83df-590b37d6c017.png" width=800>
 
-To perfrom the mouse hover action I need to create an ActionChains() class object, because I can't directly access methods from the this class. It's a built-in class available in Selenium WebDriver. Through the object of the class I am able to access all the methods which perform the mouse operations. Pass the driver into the object. To mouse over, I use the _move_to_element()_ method and pass into it the element I want to move to.
+To perfrom the mouse hover action I need to create an [ActionChains()](https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.action_chains) class object, because I can't directly access methods from the this class. It's a built-in class available in Selenium WebDriver. Through the object of the class I am able to access all the methods which perform the mouse operations. Pass the driver into the object. To mouse over, I use the _move_to_element()_ method and pass into it the element I want to move to.
 
 I create chained actions to be performed. To actually perform these actions, I add the _perform()_ method. No actions get perfomred without this method. To mouse over one element, one _move_to_element()_ statement suffices.
 
