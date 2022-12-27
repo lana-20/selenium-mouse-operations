@@ -68,6 +68,13 @@ I create chained actions to be performed. To actually perform these actions, I a
 
         assertEqual("ADD TO BAG", add_to_cart.text)
 
-Sometimes apps do not allow to perform a click action on the tabs. In those case, I use the mouse over option.
+Some apps do not allow to perform a click action on the tabs. In those case, I use the mouse hover option.
+
+Sometimes I need to perform the right click action. Let's explore another app https://swisnl.github.io/jQuery-contextMenu/demo.html.
+
+When I click on the 'right click me' button, nothing happens. But when I right click on the button, I can see a few options - Edit, Cut, Copy, Paste, Delete, Quit. I can click on any of these options, but only after I right click on the button. The _.click()_ method does not work on the button element, because it is associated with the right click functionality. A regular manual click also triggers nothing.
+
+<img src="https://user-images.githubusercontent.com/70295997/209598772-726b81ac-de78-4101-b19c-55eb9ef1d56e.png" width=800>
+
 
 
