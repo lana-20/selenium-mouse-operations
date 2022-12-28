@@ -97,6 +97,30 @@ To perform the right click action on the button, I have to access the _.context_
 
     act.context_click(btn).perform()
 
+Now, let's learn how to perform the double click action in this app https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick3.
+
+A simple form is available on the right side. Field 1 has some text displayed, Field 2 is emply. When I peform a normal click on the 'Copy Text' button, nothing happens. But when I do a double click, the text get copied from the 1st to the 2nd text box. This happens only upon the double click action.
+
+I can also change the data. Eg, I can type 'Welcome' in Field 1 and copy it to Field 2. This button has a double click functionality associated with it.
+
+2 click actions do not equal 1 double click action. Double click is a different type of action
+
+I clear the 1st textbox, pass some value into it, and double click the button element to copy the value to the 2nd textbox. All these elements are located within a frame. To interact with these elements, first, I have to switch to this particular frame. I can directly pass the frame id or name into the switching command. That automatically switches me to the form.
+
+<img src="https://user-images.githubusercontent.com/70295997/209875590-4d5afc46-cdf7-478a-8e3a-7bb490e50a5e.png" width=800>
+
+
+    driver.switch_to.frame("iframeResult")
+
+    field1 = driver.find_element(By.XPATH, "//input[@id='field1']")
+    field1.clear().send_keys("welcome")
+    field2 = driver.find_element(By.XPATH, "//input[@id='field2']")
+    # btn = driver.find_element(By.XPATH, "//button[@ondblclick='myFunction()']")
+
+    act = ActionChains(driver)
+
+
+
 
 
 
