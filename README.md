@@ -6,7 +6,7 @@ To handle mouse operations in Selenium, I use a WebDriver class called [ActionCh
 
 Different types of mouse related operations:
 1) Mouse hover - _move_to_element()_
-2) Right click
+2) Right click - _context_click(element)_
 3) Double click
 4) Drag and drop
 
@@ -75,6 +75,28 @@ Sometimes I need to perform the right click action. Let's explore another app ht
 When I click on the 'right click me' button, nothing happens. But when I right click on the button, I can see a few options - Edit, Cut, Copy, Paste, Delete, Quit. I can click on any of these options, but only after I right click on the button. The _.click()_ method does not work on the button element, because it is associated with the right click functionality. A regular manual click also triggers nothing.
 
 <img src="https://user-images.githubusercontent.com/70295997/209598772-726b81ac-de78-4101-b19c-55eb9ef1d56e.png" width=800>
+
+I can inspect and capture the button, but do not get the inspect option for the submenu elements that display upon a right click. I still want to locate these elements by a certain number of attributes. To get the attributes, right click anywhere on the web page, click Inspect to display DOM in the DevTools Elements tab. Click on the inspector option arrow mark and show the desired element(s).
+
+<img src="https://user-images.githubusercontent.com/70295997/209858979-13ccb209-6875-45db-80a2-12af00402c85.png" width=400>
+
+<img src="https://user-images.githubusercontent.com/70295997/209859019-7c254f24-4ac7-4f8f-8593-db4d3e1bd221.png" width=800>
+
+
+    driver.implicitly_wait(10)
+    driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html")
+    driver.maximize_window()
+
+    btn = driver.find_element(By.XPATH, "//span[@class='context-menu-one btn btn-neutral']")
+
+As soon as I capture the button I need to perform the right click as a mouse action. Create an ActionChains() class object and pass the driver instance into it.
+
+    act = ActionChains(driver)
+
+To perform the right click action on the button, I have to access the _.context_click()_ method by using the _act_ object. Pass the element, on which the action gets peformed. This merely creates an action. To peform the action append the mandatory _.perform() method.
+
+    act.context_click(btn).perform()
+
 
 
 
